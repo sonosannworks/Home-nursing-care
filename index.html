@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>訪問看護ステーション ひだまり</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ===== HERO ===== */
+.hero { padding: 56px 0 64px; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: clamp(30px, 4.4vw, 42px);
+  line-height: 1.45;
+  color: var(--green-text);
+  margin-bottom: 22px;
+  letter-spacing: .01em;
+}
+.hero p { font-size: 18px; color: var(--ink); margin: 0 0 34px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+.hero-photo { height: 380px; border-radius: var(--radius-lg); }
+
+/* ===== FEATURE CARDS ===== */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.feature {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+.feature .badge {
+  width: 76px; height: 76px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(155,130,90,.12);
+  color: var(--orange);
+}
+.feature .badge svg { width: 38px; height: 38px; }
+.feature h3 { font-size: 19px; color: var(--green-text); margin-bottom: 12px; }
+.feature p { font-size: 14px; color: var(--ink-soft); margin: 0; line-height: 1.8; }
+
+/* ===== SERVICE CARDS ===== */
+.services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.svc {
+  background: #fff;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 30px 22px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform .18s, box-shadow .2s;
+}
+.svc:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.svc .badge {
+  width: 64px; height: 64px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--green-bg);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green-deep);
+}
+.svc .badge svg { width: 32px; height: 32px; }
+.svc h3 { font-size: 17px; color: var(--ink); margin-bottom: 10px; }
+.svc p { font-size: 13px; color: var(--ink-soft); margin: 0; line-height: 1.7; }
+
+/* ===== NEWS ===== */
+.news-wrap { max-width: 760px; margin: 0 auto; }
+.news-item {
+  display: flex;
+  gap: 28px;
+  align-items: baseline;
+  padding: 18px 6px;
+  border-bottom: 1px dashed var(--line-soft);
+}
+.news-item .date {
+  font-family: "Zen Maru Gothic", sans-serif;
+  color: var(--green-deep);
+  font-size: 14px;
+  flex-shrink: 0;
+  letter-spacing: .04em;
+}
+.news-item .txt { font-size: 15px; color: var(--ink); }
+.news-more { text-align: right; max-width: 760px; margin: 18px auto 0; }
+.news-more a { font-size: 14px; color: var(--green-deep); font-weight: 500; }
+.news-more a:hover { text-decoration: underline; }
+
+/* ===== BANNER ===== */
+.banner { background: var(--green-bg); }
+.banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+.banner h2 { font-size: 26px; color: var(--green-text); margin-bottom: 16px; }
+.banner p { color: var(--ink); margin: 0; font-size: 15px; }
+.banner-photo { height: 230px; border-radius: var(--radius); }
+
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+  .hero h1 { font-size: 30px; }
+  .hero p { font-size: 16px; }
+  .hero-photo { height: 260px; order: -1; }
+  .hero-actions .btn { flex: 1; }
+  .features { grid-template-columns: 1fr; gap: 16px; }
+  .feature { display: grid; grid-template-columns: 76px 1fr; text-align: left; align-items: center; gap: 8px 20px; padding: 22px; }
+  .feature .badge { margin: 0; }
+  .feature h3 { grid-column: 2; margin-bottom: 4px; }
+  .feature p { grid-column: 2; }
+  .services { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .banner-grid { grid-template-columns: 1fr; }
+  .banner-photo { order: -1; height: 190px; }
+}
+@media (max-width: 460px) {
+  .services { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html"><img src="assets/logo_hidamari.png" alt="訪問看護ステーション ひだまり"></a>
+    <nav class="nav">
+      <a href="index.html" class="active">トップ</a>
+      <a href="service.html">サービス内容</a>
+      <a href="pricing.html">利用料金</a>
+      <a href="staff.html">スタッフ紹介</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+    <a class="line-btn" href="#"><svg class="li" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 10.9c0 3.9 3.6 7.1 8.4 7.7.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 6-3.5 8.2-6h0C21.4 14.1 22 12.6 22 10.9 22 6.6 17.5 3 12 3z"/></svg>LINE相談</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+      <span class="menu-label">メニュー</span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">トップ</a>
+    <a href="service.html">サービス内容</a>
+    <a href="pricing.html">利用料金</a>
+    <a href="staff.html">スタッフ紹介</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>住み慣れたおうちで、<br>安心の毎日を。</h1>
+      <p>訪問看護で、<br>あなたらしい暮らしを支えます。</p>
+      <div class="hero-actions">
+        <a class="btn btn-tel" href="tel:0312345678">
+          <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+          電話で相談する
+        </a>
+        <a class="btn btn-line" href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 10.9c0 3.9 3.6 7.1 8.4 7.7.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 6-3.5 8.2-6h0C21.4 14.1 22 12.6 22 10.9 22 6.6 17.5 3 12 3z"/></svg>
+          LINEで相談する
+        </a>
+      </div>
+    </div>
+    <div class="ph hero-photo"><span>HERO PHOTO<br>看護師と利用者さま（笑顔）</span></div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOSEN ===================== -->
+<section class="section alt">
+  <div class="wrap">
+    <h2 class="sec-title"><span class="sun"></span>ひだまりが選ばれる理由</h2>
+    <div class="features" style="margin-top:8px">
+      <div class="feature">
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <h3>24時間対応で安心</h3>
+        <p>緊急時もいつでも<br>ご連絡いただけます</p>
+      </div>
+      <div class="feature">
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></div>
+        <h3>経験豊富な看護師が訪問</h3>
+        <p>医療・介護の連携で<br>安心をサポート</p>
+      </div>
+      <div class="feature">
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8 8 0 0 1-11.5 7.2L4 20.5l1.8-4.5A8 8 0 1 1 21 11.5z"/></svg></div>
+        <h3>LINEで気軽に相談・連絡</h3>
+        <p>ご家族やケアマネとも<br>スムーズに連携</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="sec-title"><span class="sun"></span>ご提供サービス</h2>
+    <div class="services" style="margin-top:8px">
+      <div class="svc">
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-5 3.5 11 2.5-6 1.5 3h3.5"/></svg></div>
+        <h3>健康状態の観察</h3>
+        <p>血圧・体温・脈拍など<br>のチェックを行います</p>
+      </div>
+      <div class="svc">
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></div>
+        <h3>医療処置・管理</h3>
+        <p>点滴・カテーテル<br>褥瘡の処置など</p>
+      </div>
+      <div class="svc">
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="5" r="2"/><path d="M11 9l-3 2 1 4M11 9l4 1 2 4M11 9v0M9 15l-2 4M15 14l2 5"/></svg></div>
+        <h3>リハビリテーション</h3>
+        <p>日常生活動作の維持<br>向上をサポート</p>
+      </div>
+      <div class="svc">
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.6"/><circle cx="16" cy="9" r="2.2"/><path d="M3 19c0-2.8 2.2-5 5-5s5 2.2 5 5M14.5 14.2c2.3.2 4 2 4 4.8"/></svg></div>
+        <h3>ご家族への支援</h3>
+        <p>介護の相談・アドバイス<br>を行います</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NEWS ===================== -->
+<section class="section alt">
+  <div class="wrap">
+    <h2 class="sec-title"><span class="sun"></span>お知らせ</h2>
+    <div class="news-wrap" style="margin-top:8px">
+      <div class="news-item"><span class="date">2024.04.01</span><span class="txt">ホームページを公開しました</span></div>
+      <div class="news-item"><span class="date">2024.03.15</span><span class="txt">スタッフブログを更新しました</span></div>
+      <div class="news-item"><span class="date">2024.02.20</span><span class="txt">ゴールデンウィークの営業について</span></div>
+    </div>
+    <div class="news-more"><a href="#">一覧を見る →</a></div>
+  </div>
+</section>
+
+<!-- ===================== BANNER ===================== -->
+<section class="section banner">
+  <div class="wrap banner-grid">
+    <div>
+      <h2>地域に根ざした<br>訪問看護を目指して</h2>
+      <p>訪問看護ステーション ひだまりは、地域の皆さまとともに、安心して在宅療養を続けられるようサポートいたします。</p>
+    </div>
+    <div class="ph banner-photo"><span>PHOTO<br>スタッフ集合・地域の様子</span></div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo_hidamari.png" alt="訪問看護ステーション ひだまり">
+      <div class="addr">〒123-4567 東京都○○区○○町1-2-3<br>TEL: 03-1234-5678</div>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">トップ</a>
+      <a href="service.html">サービス内容</a>
+      <a href="pricing.html">利用料金</a>
+      <a href="staff.html">スタッフ紹介</a>
+      <a href="#">お知らせ</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+  <div class="footer-copy">© 2024 HIDAMARI Visiting Nursing Station</div>
+</footer>
+
+<script>
+  const t = document.getElementById('menuToggle');
+  const m = document.getElementById('mobileNav');
+  t.addEventListener('click', () => m.classList.toggle('open'));
+</script>
+</body>
+</html>
