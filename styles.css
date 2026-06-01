@@ -110,13 +110,13 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   gap: 20px;
-  height: 76px;
+  height: 210px;
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 24px;
 }
 .logo { display: flex; align-items: center; }
-.logo img { height: 50px; width: auto; }
+.logo img { height: 200px; width: auto; }
 
 .nav {
   display: flex;
@@ -168,6 +168,7 @@ h1, h2, h3, h4 {
   border: 0;
   cursor: pointer;
   padding: 6px;
+  margin-left: auto;
 }
 .menu-toggle span {
   display: block;
@@ -177,8 +178,6 @@ h1, h2, h3, h4 {
   background: var(--ink-soft);
   transition: .25s;
 }
-.menu-label { font-size: 10px; color: var(--ink-soft); margin-top: 2px; }
-
 /* ============================================================
    BUTTONS
    ============================================================ */
@@ -247,8 +246,26 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================================
-   IMAGE PLACEHOLDER
+   PHOTOS
    ============================================================ */
+.hero-photo,
+.banner-photo,
+.svc-photo,
+.map-photo {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.staff-photo {
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius);
+}
+
+/* legacy placeholder — shown only when no real img is present */
 .ph {
   position: relative;
   background:
@@ -359,8 +376,8 @@ h1, h2, h3, h4 {
 @media (max-width: 860px) {
   .nav { display: none; }
   .menu-toggle { display: flex; align-items: center; }
-  .header-inner { height: 64px; gap: 10px; }
-  .logo img { height: 40px; }
+  .header-inner { height: 160px; gap: 10px; }
+  .logo img { height: 160px; }
   .line-btn { font-size: 12px; padding: 8px 12px; }
   .section { padding: 52px 0; }
   .sec-title { font-size: 24px; }
