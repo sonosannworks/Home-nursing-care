@@ -347,7 +347,7 @@ h1, h2, h3, h4 {
 .hero {
   position: relative;
   padding: 90px 0 100px;
-  background: url('https://sonosannworks.github.io/Home-nursing-care/wp-content/themes/hidamari/image/top.jpg') center center / cover no-repeat;
+  background: url('image/top.jpg') center center / cover no-repeat;
   min-height: 520px;
   display: flex;
   align-items: center;
