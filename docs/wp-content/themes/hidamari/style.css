@@ -346,11 +346,12 @@ h1, h2, h3, h4 {
    ============================================================ */
 .hero {
   position: relative;
-  padding: 90px 0 100px;
-  background: url('https://sonosannworks.github.io/Home-nursing-care/wp-content/themes/hidamari/image/top.jpg') center center / cover no-repeat;
+  padding: 0 0 30px;
+  background: url('https://sonosannworks.github.io/Home-nursing-care/wp-content/themes/hidamari/image/photo_01_nurse_elder_smile.png') right center / cover no-repeat;
   min-height: 520px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 .hero::before {
   content: "";
@@ -364,6 +365,12 @@ h1, h2, h3, h4 {
   display: grid;
   grid-template-columns: 1fr;
   max-width: 560px;
+  align-self: flex-end;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: 0;
+  text-align: left;
+  padding-right: 5%;
 }
 .hero h1 {
   font-size: clamp(30px, 4.4vw, 42px);
@@ -371,9 +378,20 @@ h1, h2, h3, h4 {
   color: var(--green-text);
   margin-bottom: 22px;
   letter-spacing: .01em;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
-.hero p { font-size: 18px; color: var(--ink); margin: 0 0 34px; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+.hero p { font-size: 18px; color: white; margin: 0; text-shadow: 1px 1px 4px rgba(80,80,80,0.8); }
+.hero-cta {
+  background: var(--card);
+  padding: 28px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.hero-cta-inner {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
 /* ============================================================
    FEATURE CARDS
@@ -478,11 +496,21 @@ h1, h2, h3, h4 {
   .page-head h1 { font-size: 26px; }
   .footer-nav { margin-left: 0; width: 100%; }
 
-  .hero { padding: 60px 0 70px; min-height: 380px; }
+  .hero { padding: 60px 0 70px; min-height: 380px; background-position: center center; position: relative; }
   .hero::before { background: none; }
-  .hero h1 { font-size: 30px; }
-  .hero p { font-size: 16px; }
-  .hero-actions .btn { flex: 1; }
+  .hero h1 { font-size: 19px; }
+  .hero p { font-size: 12px; }
+  .hero-grid {
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 14px;
+    margin-top: auto;
+    width: 70%;
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    left: auto;
+  }
 
   .features { grid-template-columns: 1fr; gap: 16px; }
   .feature {
